@@ -1,0 +1,16 @@
+PODS:
+  - Conn (0.1.0)
+
+DEPENDENCIES:
+  - Conn (from `../`)
+
+EXTERNAL SOURCES:
+  Conn:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Conn: 736bfb10c8cbe1a996e00d7b716e4fe0dc679a3c
+
+PODFILE CHECKSUM: 74b37877452d765a7cee224662fb8644e1f81ae6
+
+COCOAPODS: 1.5.2

@@ -1,0 +1,6 @@
+framework module Conn {
+  umbrella header "Conn-umbrella.h"
+
+  export *
+  module * { export * }
+}

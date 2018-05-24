@@ -7,18 +7,51 @@
 //
 
 import UIKit
+import Conn
+
+struct User: Codable {
+    let id: Int
+    let username: String
+}
+
+struct GetAllUsers: RequestType {
+    typealias ResponseType = [User]
+    var data: RequestData {
+        return RequestData(path: "https://jsonplaceholder.typicode.com/users")
+    }
+}
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        GetAllUsers().execute(
+            onSuccess: { (users: [User]) in
+                users.usernames.printAll()
+            },
+            onError: { (error: Error) in
+                error.printDescription()
+            }
+        )
     }
 
 }
 
+extension Array where Element == User {
+    var usernames: [String] {
+        return map { $0.username }
+    }
+}
+
+extension Array where Element == String {
+    func printAll() {
+        forEach { print("username: \($0)") }
+    }
+}
+
+extension Error {
+    func printDescription() {
+        print(self)
+    }
+}
