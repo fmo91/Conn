@@ -15,6 +15,8 @@ On the other hand, there are some other libraries that are lightweight, but they
 
 Conn is the library that resolves this issue. It is very lightweight (118 lines counting empty lines until now), but it is still highly modular while it doesn't require the developer to write any boilerplate.
 
+You can read more about the reasoning behind this library in my [article in Medium](https://medium.com/@ortizfernandomartin/minimal-networking-layer-from-scratch-in-swift-4-a151af786dc5).
+
 ## Features
 
 - Declarative style
