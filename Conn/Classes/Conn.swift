@@ -1,4 +1,3 @@
-
 //
 //  Conn.swift
 //  Conn
@@ -33,7 +32,7 @@ public struct RequestData {
         method: HTTPMethod = .get,
         params: [String: Any?]? = nil,
         headers: [String: String]? = nil
-        ) {
+    ) {
         self.path = path
         self.method = method
         self.params = params
@@ -51,7 +50,7 @@ public extension RequestType {
         dispatcher: NetworkDispatcher = URLSessionNetworkDispatcher.instance,
         onSuccess: @escaping (ResponseType) -> Void,
         onError: @escaping (Error) -> Void
-        ) {
+    ) {
         dispatcher.dispatch(
             request: self.data,
             onSuccess: { (responseData: Data) in
@@ -66,12 +65,12 @@ public extension RequestType {
                         onError(error)
                     }
                 }
-        },
+            },
             onError: { (error: Error) in
                 DispatchQueue.main.async {
                     onError(error)
                 }
-        }
+            }
         )
     }
 }
@@ -114,6 +113,6 @@ public struct URLSessionNetworkDispatcher: NetworkDispatcher {
             }
             
             onSuccess(_data)
-            }.resume()
+        }.resume()
     }
 }
