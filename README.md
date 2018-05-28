@@ -13,7 +13,15 @@ There are currently some libraries that one can use in order to improve code rea
 
 On the other hand, there are some other libraries that are lightweight, but they often fall short when you need more advanced functionality.
 
-Conn is the library that resolves this issue. It is very lightweight (118 lines counting empty lines until now), but it is still highly modular while it doesn't require the developer to write any boilerplate. 
+Conn is the library that resolves this issue. It is very lightweight (118 lines counting empty lines until now), but it is still highly modular while it doesn't require the developer to write any boilerplate.
+
+## Features
+
+- Declarative style
+- Very lightweight
+- Parses JSON to models
+- Replaceable network dispatcher
+- Minimal boilerplate required
 
 ## Usage
 
