@@ -101,6 +101,10 @@ public struct URLSessionNetworkDispatcher: NetworkDispatcher {
             return
         }
         
+        if let headers = request.headers {
+            urlRequest.allHTTPHeaderFields = headers
+        }
+        
         URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             if let error = error {
                 onError(error)
